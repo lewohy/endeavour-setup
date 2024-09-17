@@ -29,163 +29,163 @@ write_log "Done"
 
 # Update firmware
 center_text "Updating firmware"
-yay -S --noconfirm linux-firmware
+gyay -S --noconfirm --overwrite linux-firmware
 # sudo systemctl restart NetworkManager
 write_log "Done"
 
 # Install
 center_text "Install packages"
 write_log "github-cli"
-yay -S --noconfirm github-cli
+gyay -S --noconfirm --overwrite github-cli
 gh auth login -p https -w
 
 
 write_log "google-chrome"
-yay -S --noconfirm google-chrome
+gyay -S --noconfirm --overwrite google-chrome
 
 write_log "obsidian"
-yay -S --noconfirm obsidian
+gyay -S --noconfirm --overwrite obsidian
 
 write_log "discord"
-yay -S --noconfirm discord
+gyay -S --noconfirm --overwrite discord
 
 write_log "fish"
-yay -S --noconfirm fish
+gyay -S --noconfirm --overwrite fish
 
 write_log "ttf-jetbrains-mono-nerd"
-yay -S --noconfirm ttf-jetbrains-mono-nerd
+gyay -S --noconfirm --overwrite ttf-jetbrains-mono-nerd
 
 write_log "tofi"
-yay -S --noconfirm tofi
+gyay -S --noconfirm --overwrite tofi
 
 write_log "eww"
-yay -S --noconfirm eww
+gyay -S --noconfirm --overwrite eww
 
 write_log "keyd"
-yay -S --noconfirm keyd
+gyay -S --noconfirm --overwrite keyd
 
 write_log "bat"
-yay -S --noconfirm bat
+gyay -S --noconfirm --overwrite bat
 
 write_log "kitty"
-yay -S --noconfirm kitty
+gyay -S --noconfirm --overwrite kitty
 
 write_log "fd"
-yay -S --noconfirm fd
+gyay -S --noconfirm --overwrite fd
 
 write_log "fzf"
-yay -S --noconfirm fzf
+gyay -S --noconfirm --overwrite fzf
 
 write_log "lsd"
-yay -S --noconfirm lsd
+gyay -S --noconfirm --overwrite lsd
 
 write_log "neovim"
-yay -S --noconfirm neovim
+gyay -S --noconfirm --overwrite neovim
 
 write_log "neovide"
-yay -S --noconfirm neovide
+gyay -S --noconfirm --overwrite neovide
 
 write_log "ripgrep"
-yay -S --noconfirm ripgrep
+gyay -S --noconfirm --overwrite ripgrep
 
 write_log "starship"
-yay -S --noconfirm starship
+gyay -S --noconfirm --overwrite starship
 
 write_log "zoxide"
-yay -S --noconfirm zoxide
+gyay -S --noconfirm --overwrite zoxide
 
 write_log "croc"
-yay -S --noconfirm croc
+gyay -S --noconfirm --overwrite croc
 
 write_log "curl"
-yay -S --noconfirm curl
+gyay -S --noconfirm --overwrite curl
 
 write_log "dua-cli"
-yay -S --noconfirm dua-cli
+gyay -S --noconfirm --overwrite dua-cli
 
 write_log "duf"
-yay -S --noconfirm duf
+gyay -S --noconfirm --overwrite duf
 
 write_log "procs"
-yay -S --noconfirm procs
+gyay -S --noconfirm --overwrite procs
 
 write_log "tre-command"
-yay -S --noconfirm tre-command
+gyay -S --noconfirm --overwrite tre-command
 
 write_log "neofetch"
-yay -S --noconfirm neofetch
+gyay -S --noconfirm --overwrite neofetch
 
 write_log "fastfetch"
-yay -S --noconfirm fastfetch
+gyay -S --noconfirm --overwrite fastfetch
 
 write_log "bottom"
-yay -S --noconfirm bottom
+gyay -S --noconfirm --overwrite bottom
 
 write_log "git-delta"
-yay -S --noconfirm git-delta
+gyay -S --noconfirm --overwrite git-delta
 
 write_log "sd"
-yay -S --noconfirm sd
+gyay -S --noconfirm --overwrite sd
 
 write_log "tealdeer"
-yay -S --noconfirm tealdeer
+gyay -S --noconfirm --overwrite tealdeer
 
 write_log "rslsync"
-yay -S --noconfirm rslsync
+gyay -S --noconfirm --overwrite rslsync
 
 write_log "kime"
-yay -S --noconfirm kime
+gyay -S --noconfirm --overwrite kime
 
 write_log "jetbrains-toolbox"
-yay -S --noconfirm jetbrains-toolbox
+gyay -S --noconfirm --overwrite jetbrains-toolbox
 
 write_log "go"
-yay -S --noconfirm go
+gyay -S --noconfirm --overwrite go
 
 write_log "hyprland-git"
-yay -S --noconfirm hyprland-git
+gyay -S --noconfirm --overwrite hyprland-git
 
 write_log "swaync-git"
-yay -S --noconfirm swaync-git
+gyay -S --noconfirm --overwrite swaync-git
 
 write_log "hyprlock-git"
-yay -S --noconfirm hyprlock-git
+gyay -S --noconfirm --overwrite hyprlock-git
 
 write_log "xdg-desktop-portal-hyprland-git"
-yay -S --noconfirm xdg-desktop-portal-hyprland-git
+gyay -S --noconfirm --overwrite xdg-desktop-portal-hyprland-git
 
 write_log "cliphist"
-yay -S --noconfirm cliphist
+gyay -S --noconfirm --overwrite cliphist
 
 write_log "playerctl-git"
-yay -S --noconfirm playerctl-git
+gyay -S --noconfirm --overwrite playerctl-git
 
 write_log "grim-git"
-yay -S --noconfirm grim-git
+gyay -S --noconfirm --overwrite grim-git
 
 write_log "slurp-git"
-yay -S --noconfirm slurp-git
+gyay -S --noconfirm --overwrite slurp-git
 
 write_log "jq"
-yay -S --noconfirm jq
+gyay -S --noconfirm --overwrite jq
 
 write_log "wf-recorder-git"
-yay -S --noconfirm wf-recorder-git
+gyay -S --noconfirm --overwrite wf-recorder-git
 
 write_log "brightnessctl-git"
-yay -S --noconfirm brightnessctl-git
+gyay -S --noconfirm --overwrite brightnessctl-git
 
 write_log "wine"
-yay -S --noconfirm wine
+gyay -S --noconfirm --overwrite wine
 
 write_log "telegram-desktop"
-yay -S --noconfirm telegram-desktop
+gyay -S --noconfirm --overwrite telegram-desktop
 
 write_log "figma-linux-bin"
-yay -S --noconfirm figma-linux-bin
+gyay -S --noconfirm --overwrite figma-linux-bin
 
 write_log "notion-app-electron"
-yay -S --noconfirm notion-app-electron
+gyay -S --noconfirm --overwrite notion-app-electron
 
 write_log "Done"
 
@@ -226,6 +226,9 @@ write_log "Done"
 # pam 설정 변경
 # /etc/security/faillock.conf
 # deny = 0설정
+
+# 언어 설정
+localectl set-locale LANG=en_US.UTF-8
 
 # 테마 설정
 # gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'
