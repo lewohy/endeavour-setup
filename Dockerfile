@@ -11,9 +11,7 @@ RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER lewohy
 WORKDIR /home/lewohy
 
-RUN git clone https://aur.archlinux.org/yay.git
-RUN cd yay
-RUN makepkg -si
+RUN git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Update
 RUN yay -Syu --noconfirm
