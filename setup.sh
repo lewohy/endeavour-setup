@@ -228,7 +228,7 @@ write_log "Done"
 # deny = 0설정
 
 # 테마 설정
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'
+# gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'
 
 # Setup scripts
 center_text "Setup scripts"
