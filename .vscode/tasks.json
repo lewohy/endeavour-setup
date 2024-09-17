@@ -1,0 +1,77 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo: image-name",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Image name: ${input:image-name}",
+            ],
+        },
+        {
+            "label": "echo: container-name",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Container name: ${input:container-name}",
+            ],
+        },
+        {
+            "label": "docker: build",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "${input:image-name}",
+                "."
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "echo: image-name",
+            ]
+        },
+        {
+            "label": "docker: run",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "-it",
+                "--rm",
+                "--name",
+                "${input:container-name}",
+                "${input:image-name}",
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "echo: image-name",
+                "echo: container-name",
+                "docker: build"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "image-name",
+            "type": "promptString",
+            "description": "Enter the image name",
+            "default": "endeavour-setup-test",
+        },
+        {
+            "id": "container-name",
+            "type": "promptString",
+            "description": "Enter the container name",
+            "default": "endeavour-setup-test",
+        }
+    ]
+}
