@@ -7,11 +7,11 @@ RUN pacman -S --needed --noconfirm git base-devel
 # Create User
 RUN useradd -m lewohy
 RUN echo "lewohy:1234" | chpasswd
-RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "lewohy ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER lewohy
 WORKDIR /home/lewohy
 
-RUN git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+RUN git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm
 
 # Update
 RUN yay -Syu --noconfirm
