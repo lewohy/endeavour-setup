@@ -29,163 +29,163 @@ write_log "Done"
 
 # Update firmware
 center_text "Updating firmware"
-gyay -S --noconfirm --overwrite linux-firmware
+yay -S --noconfirm --overwrite linux-firmware
 # sudo systemctl restart NetworkManager
 write_log "Done"
 
 # Install
 center_text "Install packages"
 write_log "github-cli"
-gyay -S --noconfirm --overwrite github-cli
+yay -S --noconfirm --overwrite github-cli
 gh auth login -p https -w
 
 
 write_log "google-chrome"
-gyay -S --noconfirm --overwrite google-chrome
+yay -S --noconfirm --overwrite google-chrome
 
 write_log "obsidian"
-gyay -S --noconfirm --overwrite obsidian
+yay -S --noconfirm --overwrite obsidian
 
 write_log "discord"
-gyay -S --noconfirm --overwrite discord
+yay -S --noconfirm --overwrite discord
 
 write_log "fish"
-gyay -S --noconfirm --overwrite fish
+yay -S --noconfirm --overwrite fish
 
 write_log "ttf-jetbrains-mono-nerd"
-gyay -S --noconfirm --overwrite ttf-jetbrains-mono-nerd
+yay -S --noconfirm --overwrite ttf-jetbrains-mono-nerd
 
 write_log "tofi"
-gyay -S --noconfirm --overwrite tofi
+yay -S --noconfirm --overwrite tofi
 
 write_log "eww"
-gyay -S --noconfirm --overwrite eww
+yay -S --noconfirm --overwrite eww
 
 write_log "keyd"
-gyay -S --noconfirm --overwrite keyd
+yay -S --noconfirm --overwrite keyd
 
 write_log "bat"
-gyay -S --noconfirm --overwrite bat
+yay -S --noconfirm --overwrite bat
 
 write_log "kitty"
-gyay -S --noconfirm --overwrite kitty
+yay -S --noconfirm --overwrite kitty
 
 write_log "fd"
-gyay -S --noconfirm --overwrite fd
+yay -S --noconfirm --overwrite fd
 
 write_log "fzf"
-gyay -S --noconfirm --overwrite fzf
+yay -S --noconfirm --overwrite fzf
 
 write_log "lsd"
-gyay -S --noconfirm --overwrite lsd
+yay -S --noconfirm --overwrite lsd
 
 write_log "neovim"
-gyay -S --noconfirm --overwrite neovim
+yay -S --noconfirm --overwrite neovim
 
 write_log "neovide"
-gyay -S --noconfirm --overwrite neovide
+yay -S --noconfirm --overwrite neovide
 
 write_log "ripgrep"
-gyay -S --noconfirm --overwrite ripgrep
+yay -S --noconfirm --overwrite ripgrep
 
 write_log "starship"
-gyay -S --noconfirm --overwrite starship
+yay -S --noconfirm --overwrite starship
 
 write_log "zoxide"
-gyay -S --noconfirm --overwrite zoxide
+yay -S --noconfirm --overwrite zoxide
 
 write_log "croc"
-gyay -S --noconfirm --overwrite croc
+yay -S --noconfirm --overwrite croc
 
 write_log "curl"
-gyay -S --noconfirm --overwrite curl
+yay -S --noconfirm --overwrite curl
 
 write_log "dua-cli"
-gyay -S --noconfirm --overwrite dua-cli
+yay -S --noconfirm --overwrite dua-cli
 
 write_log "duf"
-gyay -S --noconfirm --overwrite duf
+yay -S --noconfirm --overwrite duf
 
 write_log "procs"
-gyay -S --noconfirm --overwrite procs
+yay -S --noconfirm --overwrite procs
 
 write_log "tre-command"
-gyay -S --noconfirm --overwrite tre-command
+yay -S --noconfirm --overwrite tre-command
 
 write_log "neofetch"
-gyay -S --noconfirm --overwrite neofetch
+yay -S --noconfirm --overwrite neofetch
 
 write_log "fastfetch"
-gyay -S --noconfirm --overwrite fastfetch
+yay -S --noconfirm --overwrite fastfetch
 
 write_log "bottom"
-gyay -S --noconfirm --overwrite bottom
+yay -S --noconfirm --overwrite bottom
 
 write_log "git-delta"
-gyay -S --noconfirm --overwrite git-delta
+yay -S --noconfirm --overwrite git-delta
 
 write_log "sd"
-gyay -S --noconfirm --overwrite sd
+yay -S --noconfirm --overwrite sd
 
 write_log "tealdeer"
-gyay -S --noconfirm --overwrite tealdeer
+yay -S --noconfirm --overwrite tealdeer
 
 write_log "rslsync"
-gyay -S --noconfirm --overwrite rslsync
+yay -S --noconfirm --overwrite rslsync
 
 write_log "kime"
-gyay -S --noconfirm --overwrite kime
+yay -S --noconfirm --overwrite kime
 
 write_log "jetbrains-toolbox"
-gyay -S --noconfirm --overwrite jetbrains-toolbox
+yay -S --noconfirm --overwrite jetbrains-toolbox
 
 write_log "go"
-gyay -S --noconfirm --overwrite go
+yay -S --noconfirm --overwrite go
 
 write_log "hyprland-git"
-gyay -S --noconfirm --overwrite hyprland-git
+yay -S --noconfirm --overwrite hyprland-git
 
 write_log "swaync-git"
-gyay -S --noconfirm --overwrite swaync-git
+yay -S --noconfirm --overwrite swaync-git
 
 write_log "hyprlock-git"
-gyay -S --noconfirm --overwrite hyprlock-git
+yay -S --noconfirm --overwrite hyprlock-git
 
 write_log "xdg-desktop-portal-hyprland-git"
-gyay -S --noconfirm --overwrite xdg-desktop-portal-hyprland-git
+yay -S --noconfirm --overwrite xdg-desktop-portal-hyprland-git
 
 write_log "cliphist"
-gyay -S --noconfirm --overwrite cliphist
+yay -S --noconfirm --overwrite cliphist
 
 write_log "playerctl-git"
-gyay -S --noconfirm --overwrite playerctl-git
+yay -S --noconfirm --overwrite playerctl-git
 
 write_log "grim-git"
-gyay -S --noconfirm --overwrite grim-git
+yay -S --noconfirm --overwrite grim-git
 
 write_log "slurp-git"
-gyay -S --noconfirm --overwrite slurp-git
+yay -S --noconfirm --overwrite slurp-git
 
 write_log "jq"
-gyay -S --noconfirm --overwrite jq
+yay -S --noconfirm --overwrite jq
 
 write_log "wf-recorder-git"
-gyay -S --noconfirm --overwrite wf-recorder-git
+yay -S --noconfirm --overwrite wf-recorder-git
 
 write_log "brightnessctl-git"
-gyay -S --noconfirm --overwrite brightnessctl-git
+yay -S --noconfirm --overwrite brightnessctl-git
 
 write_log "wine"
-gyay -S --noconfirm --overwrite wine
+yay -S --noconfirm --overwrite wine
 
 write_log "telegram-desktop"
-gyay -S --noconfirm --overwrite telegram-desktop
+yay -S --noconfirm --overwrite telegram-desktop
 
 write_log "figma-linux-bin"
-gyay -S --noconfirm --overwrite figma-linux-bin
+yay -S --noconfirm --overwrite figma-linux-bin
 
 write_log "notion-app-electron"
-gyay -S --noconfirm --overwrite notion-app-electron
+yay -S --noconfirm --overwrite notion-app-electron
 
 write_log "Done"
 
