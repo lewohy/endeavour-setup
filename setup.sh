@@ -17,10 +17,29 @@ center_text() {
 
 write_log() {
     timestamp=$(date +"%Y-%m-%d %H:%m:%S")
-    printf "\e[32m[%s]\e[0m %s\n" "$timestamp" "$1"
+    printf "---- \n"
+    printf "---- \e[32m[%s]\e[0m %s\n" "$timestamp" "$1"
+    printf "---- \n"
 }
 
 cd ~
+
+# Add mirrorlist
+center_text "Add mirrorlist"
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+center_text "/etc/pacman.d/mirrorlist"
+sudo cat /etc/pacman.d/mirrorlist
+center_text ""
+write_log "Done"
+
+# Edit concurrent downloads
+center_text "Edit concurrent downloads"
+sudo sed -i 's/#?ParallelDownloads = \d+/ParallelDownloads = 8/g' /etc/pacman.conf
+center_text "/etc/pacman.conf"
+sudo cat /etc/pacman.conf
+center_text ""
+write_log "Done"
 
 # Update the systeem
 center_text "Updating the system"
@@ -29,163 +48,166 @@ write_log "Done"
 
 # Update firmware
 center_text "Updating firmware"
-yay -S --noconfirm --overwrite linux-firmware
-# sudo systemctl restart NetworkManager
+yay -S --noconfirm linux-firmware
 write_log "Done"
 
-# Install
+# Install 
 center_text "Install packages"
+
 write_log "github-cli"
-yay -S --noconfirm --overwrite github-cli
+yay -S --noconfirm github-cli
 gh auth login -p https -w
 
+write_log "keyd"
+yay -S --noconfirm keyd
+
+write_log "gdm"
+yay -S --noconfirm gdm
+sudo systemctl enable gdm.service
 
 write_log "google-chrome"
-yay -S --noconfirm --overwrite google-chrome
+yay -S --noconfirm google-chrome
 
 write_log "obsidian"
-yay -S --noconfirm --overwrite obsidian
+yay -S --noconfirm obsidian
 
 write_log "discord"
-yay -S --noconfirm --overwrite discord
+yay -S --noconfirm discord
 
 write_log "fish"
-yay -S --noconfirm --overwrite fish
+yay -S --noconfirm fish
 
 write_log "ttf-jetbrains-mono-nerd"
-yay -S --noconfirm --overwrite ttf-jetbrains-mono-nerd
+yay -S --noconfirm ttf-jetbrains-mono-nerd
 
 write_log "tofi"
-yay -S --noconfirm --overwrite tofi
+yay -S --noconfirm tofi
 
 write_log "eww"
-yay -S --noconfirm --overwrite eww
-
-write_log "keyd"
-yay -S --noconfirm --overwrite keyd
+yay -S --noconfirm eww
 
 write_log "bat"
-yay -S --noconfirm --overwrite bat
+yay -S --noconfirm bat
 
 write_log "kitty"
-yay -S --noconfirm --overwrite kitty
+yay -S --noconfirm kitty
 
 write_log "fd"
-yay -S --noconfirm --overwrite fd
+yay -S --noconfirm fd
 
 write_log "fzf"
-yay -S --noconfirm --overwrite fzf
+yay -S --noconfirm fzf
 
 write_log "lsd"
-yay -S --noconfirm --overwrite lsd
+yay -S --noconfirm lsd
 
 write_log "neovim"
-yay -S --noconfirm --overwrite neovim
+yay -S --noconfirm neovim
 
 write_log "neovide"
-yay -S --noconfirm --overwrite neovide
+yay -S --noconfirm neovide
 
 write_log "ripgrep"
-yay -S --noconfirm --overwrite ripgrep
+yay -S --noconfirm ripgrep
 
 write_log "starship"
-yay -S --noconfirm --overwrite starship
+yay -S --noconfirm starship
 
 write_log "zoxide"
-yay -S --noconfirm --overwrite zoxide
+yay -S --noconfirm zoxide
 
 write_log "croc"
-yay -S --noconfirm --overwrite croc
+yay -S --noconfirm croc
 
 write_log "curl"
-yay -S --noconfirm --overwrite curl
+yay -S --noconfirm curl
 
 write_log "dua-cli"
-yay -S --noconfirm --overwrite dua-cli
+yay -S --noconfirm dua-cli
 
 write_log "duf"
-yay -S --noconfirm --overwrite duf
+yay -S --noconfirm duf
 
 write_log "procs"
-yay -S --noconfirm --overwrite procs
+yay -S --noconfirm procs
 
 write_log "tre-command"
-yay -S --noconfirm --overwrite tre-command
+yay -S --noconfirm tre-command
 
 write_log "neofetch"
-yay -S --noconfirm --overwrite neofetch
+yay -S --noconfirm neofetch
 
 write_log "fastfetch"
-yay -S --noconfirm --overwrite fastfetch
+yay -S --noconfirm fastfetch
 
 write_log "bottom"
-yay -S --noconfirm --overwrite bottom
+yay -S --noconfirm bottom
 
 write_log "git-delta"
-yay -S --noconfirm --overwrite git-delta
+yay -S --noconfirm git-delta
 
 write_log "sd"
-yay -S --noconfirm --overwrite sd
+yay -S --noconfirm sd
 
 write_log "tealdeer"
-yay -S --noconfirm --overwrite tealdeer
+yay -S --noconfirm tealdeer
 
 write_log "rslsync"
-yay -S --noconfirm --overwrite rslsync
+yay -S --noconfirm rslsync
 
 write_log "kime"
-yay -S --noconfirm --overwrite kime
+yay -S --noconfirm kime
 
 write_log "jetbrains-toolbox"
-yay -S --noconfirm --overwrite jetbrains-toolbox
+yay -S --noconfirm jetbrains-toolbox
 
 write_log "go"
-yay -S --noconfirm --overwrite go
+yay -S --noconfirm go
 
 write_log "hyprland-git"
-yay -S --noconfirm --overwrite hyprland-git
-
-write_log "swaync-git"
-yay -S --noconfirm --overwrite swaync-git
+yay -S --noconfirm hyprland-git
 
 write_log "hyprlock-git"
-yay -S --noconfirm --overwrite hyprlock-git
+yay -S --noconfirm hyprlock-git
 
 write_log "xdg-desktop-portal-hyprland-git"
-yay -S --noconfirm --overwrite xdg-desktop-portal-hyprland-git
+yay -S --noconfirm xdg-desktop-portal-hyprland-git
+
+write_log "swaync-git"
+yay -S --noconfirm swaync-git
 
 write_log "cliphist"
-yay -S --noconfirm --overwrite cliphist
+yay -S --noconfirm cliphist
 
 write_log "playerctl-git"
-yay -S --noconfirm --overwrite playerctl-git
+yay -S --noconfirm playerctl-git
 
 write_log "grim-git"
-yay -S --noconfirm --overwrite grim-git
+yay -S --noconfirm grim-git
 
 write_log "slurp-git"
-yay -S --noconfirm --overwrite slurp-git
+yay -S --noconfirm slurp-git
 
 write_log "jq"
-yay -S --noconfirm --overwrite jq
+yay -S --noconfirm jq
 
 write_log "wf-recorder-git"
-yay -S --noconfirm --overwrite wf-recorder-git
+yay -S --noconfirm wf-recorder-git
 
 write_log "brightnessctl-git"
-yay -S --noconfirm --overwrite brightnessctl-git
+yay -S --noconfirm brightnessctl-git
 
 write_log "wine"
-yay -S --noconfirm --overwrite wine
+yay -S --noconfirm wine
 
 write_log "telegram-desktop"
-yay -S --noconfirm --overwrite telegram-desktop
+yay -S --noconfirm telegram-desktop
 
 write_log "figma-linux-bin"
-yay -S --noconfirm --overwrite figma-linux-bin
+yay -S --noconfirm figma-linux-bin
 
 write_log "notion-app-electron"
-yay -S --noconfirm --overwrite notion-app-electron
+yay -S --noconfirm notion-app-electron
 
 write_log "Done"
 
@@ -234,6 +256,6 @@ localectl set-locale LANG=en_US.UTF-8
 # gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'
 
 # Setup scripts
-center_text "Setup scripts"
-chmod +x ~/.config/scripts/*
-write_log "Done"
+# center_text "Setup scripts"
+# chmod +x ~/.config/scripts/*
+# write_log "Done"
