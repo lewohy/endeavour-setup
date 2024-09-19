@@ -52,7 +52,15 @@ center_text "Updating firmware"
 yay -S --noconfirm linux-firmware
 write_log "Done"
 
-# Install github0-cli
+# Install keyd
+center_text "Install keyd"
+yay -S --noconfirm keyd
+usermod -aG keyd lewohy
+sudo systemctl enable keyd.service
+sudo systemctl start keyd.service
+write_log "Done"
+
+# Install github-cli
 center_text "github-cli"
 yay -S --noconfirm github-cli
 gh auth login -p https -w
@@ -66,7 +74,6 @@ write_log "Done"
 # Install packages
 center_text "Install packages"
 yay -S --noconfirm \
-    keyd \
     gdm \
     google-chrome \
     obsidian \
@@ -129,18 +136,12 @@ center_text "Setting default shell to fish"
 chsh -s $(which fish)
 write_log "Done"
 
-# Setup keyd
-center_text "Setup keyd"
-sudo systemctl enable keyd.service
-sudo systemctl start keyd.service
-# TODO: Add keyd configuration
-
 # Install resilio-sync
 center_text "Setup resilio-sync"
 mkdir -p ~/.config/rslsync ~/.sync
 gh repo clone lewohy/rslsync ~/.config/rslsync
-systemctl enable --user rslsync.service
-systemctl start --user rslsync.service
+sudo systemctl enable --user rslsync.service
+sudo systemctl start --user rslsync.service
 write_log "Done"
 
 # Enable gdm
