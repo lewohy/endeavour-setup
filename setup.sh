@@ -17,9 +17,9 @@ center_text() {
 
 write_log() {
     timestamp=$(date +"%Y-%m-%d %H:%m:%S")
-    printf "---- \n"
-    printf "---- \e[32m[%s]\e[0m %s\n" "$timestamp" "$1"
-    printf "---- \n"
+    printf -- "\e[32m---- \n"
+    printf -- "\e[32m---- [%s]\e[0m %s\n" "$timestamp" "$1"
+    printf -- "\e[32m---- \n"
 }
 
 cd ~
@@ -36,7 +36,7 @@ write_log "Done"
 
 # Edit concurrent downloads
 center_text "Edit concurrent downloads"
-sudo sed -i 's/#?ParallelDownloads = \d+/ParallelDownloads = 8/g' /etc/pacman.conf
+sudo sed -E 's/#?ParallelDownloads = [0-9]+/ParallelDownloads = 8/g' /etc/pacman.conf
 center_text "/etc/pacman.conf"
 sudo cat /etc/pacman.conf
 center_text ""
@@ -112,10 +112,11 @@ yay -S --noconfirm \
     jq \
     wf-recorder-git \
     brightnessctl-git \
-    wine-stable \
     telegram-desktop \
     figma-linux-bin \
     notion-app-electron
+
+# TODO: wine-stable
 
 write_log "Done"
 
@@ -148,7 +149,7 @@ sudo systemctl enable gdm.service
 write_log "Done"
 
 # timedatectl(듀얼부팅시 윈도우-리눅스 시간안맞는 문제 해결)
-center_text "Fixing time issue"
+center_text "Fix time issue"
 timedatectl set-local-rtc 1 --adjust-system-clock
 write_log "Done"
 

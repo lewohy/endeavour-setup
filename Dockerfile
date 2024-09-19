@@ -62,7 +62,7 @@ RUN yay -S --noconfirm \
     # xdg-desktop-portal-hyprland-git \
     # swaync-git \
     cliphist \
-    playerctl-git \
+    # playerctl-git \
     grim-git \
     slurp-git \
     jq \
